@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>word counter tool</title>
+  </head>
+  <body>
+    <div class="container">
+      <p id="heading">Word Counter Tool </p>
+      <p id="inst">Just for the trial purpose i kept the limit as 6... If we want to increase we can increase also</p>
+        <textarea cols="50" rows="10"   id="text" placeholder="Write..."></textarea>
+        <br>
+        <p id="status"> Type and click below to get the words</p>
+        <button id="button">count word</button>
+      
+    </div>
+      
+      
+    <script>
+      $("#button").click(function(){
+          var status = $("#text").val().split(' ').length;
+          $("#status").html(status);
+          var maxlen = 2;
+          if(status>maxlen){
+              $("#status").html((status-maxlen)+' Extra Words');
+              $("#status").css("color",'#b92e34');
+              
+          }
+      });  
+      
+    </script>    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
